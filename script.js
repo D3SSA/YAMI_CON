@@ -1,78 +1,114 @@
+// DOMContentLoaded
+// ├── function rotateCards() { ... }
+// ├── const nameInput, phoneInput, etc...
+// ├── function validateAndSanitize() { ... }
+// ├── function validateForm() { ... }
+// ├── addEventListener для input
+// ├── addEventListener для click
+// └── setInterval(rotateCards, 3000) ← В КОНЦЕ
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM загружен');
-
+    
+    // Функция ротации карточек
+function rotateCards() {
+    const container = document.querySelector('.delicious-colletion');
+    const cards = Array.from(container.querySelectorAll('.delicious-card'));
+    
+    if (cards.length > 0) {
+        const firstCard = cards[0];
+        
+        // Исчезновение с движением
+        firstCard.style.opacity = '0';
+        firstCard.style.transform = 'scale(0.8) translateY(20px)';
+        
+        setTimeout(() => {
+            container.appendChild(firstCard);
+            
+            setTimeout(() => {
+                // Появление с движением
+                firstCard.style.opacity = '1';
+                firstCard.style.transform = 'scale(1) translateY(0)';
+            }, 50);
+        }, 600);
+    }
+}
+    // Код формы
     const nameInput = document.getElementById('name-user');
     const phoneInput = document.getElementById('tel-number');
     const submitBtn = document.querySelector('.submit-btn');
-    const formContainer = document.querySelector('.order-form-container'); // переименовали
+    const formContainer = document.querySelector('.order-form-container');
 
     console.log('Найдены элементы:', { nameInput, phoneInput, submitBtn, formContainer });
 
     // Простая валидация
-    
-   const validateAndSanitize = (input, type) => {
-    const patterns = {
-        name: /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,12}$/,
-        phone: /^(\+7|8)[\d\s\-()]{9,18}$/
+    const validateAndSanitize = (input, type) => {
+        const patterns = {
+            name: /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,12}$/,
+            phone: /^(\+7|8)[\d\s\-()]{9,18}$/
+        };
+        
+        if (!patterns[type].test(input)) return null;
+        
+        // Санитизация для имени
+        if (type === 'name') {
+            return input
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+        
+        return input; // телефон возвращаем как есть
     };
-    
-    if (!patterns[type].test(input)) return null;
-    
-    // Санитизация для имени
-    if (type === 'name') {
-        return input
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
-    }
-    
-    return input; // телефон возвращаем как есть
-};
-function validateForm() {
-    const nameValue = nameInput.value.trim();
-    const phoneValue = phoneInput.value.trim();
-// Использование
-    const safeName = validateAndSanitize(nameValue, 'name'); // исправлено на 'name'
-    const safePhone = validateAndSanitize(phoneValue, 'phone'); // исправлено на 'phone'
 
-    const isNameValid = safeName !== null;
-    const isPhoneValid = safePhone !== null && safePhone.replace(/\D/g, '').length >= 11;
+    function validateForm() {
+        const nameValue = nameInput.value.trim();
+        const phoneValue = phoneInput.value.trim();
+        
+        const safeName = validateAndSanitize(nameValue, 'name');
+        const safePhone = validateAndSanitize(phoneValue, 'phone');
 
-    // Обновление классов для имени
-    const parentName = nameInput.closest('.input-with-label');
-    if (parentName) {
-        if (isNameValid) {
-            parentName.classList.add('valid');
-            parentName.classList.remove('invalid');
+        const isNameValid = safeName !== null;
+        const isPhoneValid = safePhone !== null && safePhone.replace(/\D/g, '').length >= 11;
+
+        // Обновление классов для имени
+        const parentName = nameInput.closest('.input-with-label');
+        if (parentName) {
+            if (isNameValid) {
+                parentName.classList.add('valid');
+                parentName.classList.remove('invalid');
+            } else {
+                parentName.classList.remove('valid');
+                parentName.classList.add('invalid');
+            }
+        }
+
+        // Обновление классов для телефона
+        const parentPhone = phoneInput.closest('.input-with-label');
+        if (parentPhone) {
+            if (isPhoneValid) {
+                parentPhone.classList.add('valid');
+                parentPhone.classList.remove('invalid');
+            } else {
+                parentPhone.classList.remove('valid');
+                parentPhone.classList.add('invalid');
+            }
+        }
+
+        // Активировать кнопку
+        if (isNameValid && isPhoneValid) {
+            submitBtn.disabled = false;
+            submitBtn.classList.add('active');
+            return true;
         } else {
-            parentName.classList.remove('valid');
-            parentName.classList.add('invalid');
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('active');
+            return false;
         }
     }
 
-    // Обновление классов для телефона
-    const parentPhone = phoneInput.closest('.input-with-label');
-    if (parentPhone) {
-        if (isPhoneValid) {
-            parentPhone.classList.add('valid');
-            parentPhone.classList.remove('invalid');
-        } else {
-            parentPhone.classList.remove('valid');
-            parentPhone.classList.add('invalid');
-        }
-    }
-
-    // Активировать кнопку
-    if (isNameValid && isPhoneValid) {
-        submitBtn.disabled = false;
-        submitBtn.classList.add('active');
-        return true;
-    } else {
-        submitBtn.disabled = true;
-        submitBtn.classList.remove('active');
-        return false;
-    }
-}
     // Валидация при вводе
     nameInput.addEventListener('input', validateForm);
     phoneInput.addEventListener('input', validateForm);
@@ -150,6 +186,8 @@ function validateForm() {
         console.log('Мышь над кнопкой, disabled:', submitBtn.disabled);
     });
 
+    // ЗАПУСК РОТАЦИИ КАРТОЧЕК
+    setInterval(rotateCards, 3000);
+    
     console.log('Обработчики установлены. Ждем клик...');
-
 });
