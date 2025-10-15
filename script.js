@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
    const validateAndSanitize = (input, type) => {
     const patterns = {
         name: /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,12}$/,
-        phone: /^[\d\s\-+()]{11,20}$/
+        phone: /^(\+7|8)[\d\s\-()]{9,18}$/
     };
     
     if (!patterns[type].test(input)) return null;
@@ -151,4 +151,5 @@ function validateForm() {
     });
 
     console.log('Обработчики установлены. Ждем клик...');
+
 });
