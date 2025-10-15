@@ -1,0 +1,920 @@
+/* Стили для основоной страницы index */
+html {
+    scroll-behavior: smooth;  /* ← ДОБАВИТЬ СЮДА */
+    scroll-padding-top: 80px; /* Отступ для фиксированного header */
+}
+
+*{  margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scrollbar-width: none;
+    font-size: 16px;}
+    
+
+    section {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 25px;
+    z-index: 1;
+    }
+    .logo-eclipse,
+    .logo-eclipse-middle,
+    .logo-eclipse-small,
+    .logo-eclipse-smallest,
+    .logo-eclipse-collections,
+    .our-secret-eclipse-small,
+    .our-secret-eclipse-large,
+    .events-eclipse-large,
+    .order-and-delivery-eclipse-large,
+    .order-eclipse {
+        z-index: 0; /* Все эклипсы под секциями */
+    }
+
+a { text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    min-width: 1440px;
+    width: 100%;
+    height: 64px;
+    border: solid 1px #6d6969;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 0 20px 5px #6c6b6c;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    /* background: linear-gradient(155deg, #dad87c, #ac7683, #e94f73); */
+    }
+
+    .header-button{
+        padding: 5px 5px;
+        font-size: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        /* identical to box height, or 30px */
+        letter-spacing: -0.023em;
+        width: 85px;
+        height: 36px;
+        /* ТЕКСТ, КОНКИ */
+        color: #242424;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+}
+    .header-button:hover{
+    background: #A3A3A3;
+    border-radius: 10px;
+    }
+
+
+.logo-container{
+    width: 59px;
+    height: 42px;
+    padding-bottom: 13px;
+    padding-left: 63px;
+    padding-right: 240px;
+}
+.image-header{
+    width: 59px;
+    height: 42px;
+}
+.header-container{
+    display: flex;
+    width: 100%;
+    padding: 0 68px;
+    gap: 47px;
+    justify-content: space-between; /* или center */
+    align-items: center;
+    font-size: 20px;
+    flex-wrap: nowrap;
+}
+.header-text{
+    white-space: nowrap;
+}
+
+
+.info-company{
+    margin: 0 auto;
+    width: 1140px;
+    gap: 25px;
+    padding-top: 65px;
+    height: 600px;
+    min-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    /* background: linear-gradient(155deg, #dad87c, #ac7683, #e94f73); */
+    z-index: -1;
+}
+
+.support-container{
+    width: 666px;
+    height: 600px;
+    padding-top:60px;
+    padding-left: 25px;
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.logo-support{
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+    position: relative;
+    width: 600px;
+    height: 600px;
+
+}
+
+.headlines-container{
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 85px;
+    width: 745px;
+    height: 544px;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    padding-top: 180px;
+    justify-self: start;
+    z-index: 1;}
+
+.headlines{
+    font-family: "Libertinus Sans", sans-serif;
+    font-size: 80px;
+    white-space: nowrap;
+    font-weight: bold;
+    z-index: 1;
+}
+.text-headlines{
+    display: block;
+    font-size: 28px;
+    line-height: 125%;
+    font-style: normal;
+    padding-bottom: 30px;
+    width: 734px;
+}
+
+.order{
+    font-size: 28px;
+    justify-self: start;
+    width: 207px;
+    height: 65px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(155deg, #F44A71, #FF86A1);
+    
+}
+.order a{
+    padding-top: 15px;
+    font-size: 28px;
+    line-height: 125%;
+    font-weight: normal;
+    display: block;
+    text-align: center;
+    color: white;
+}
+.logo-eclipse{
+    grid-row: 1;
+    grid-column: 1;
+    position: relative;
+    width: 624px;
+    height: 624px;
+    border-radius: 360px;
+    background: linear-gradient(155deg, #FF94AD, #FF3B68, #FF2C5D);
+    box-shadow: 0 0 20px 5px #6c6b6c;
+    z-index: 0;}
+
+.logo-eclipse-middle{
+    position: absolute;
+    margin-top: 638px;
+    margin-left: -141px;
+    justify-self: start;
+    width: 520px; /* чуть меньше основного */
+    height: 520px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: -1;
+}
+
+.logo-eclipse-small{
+    position: absolute;
+    margin-top: 530px;
+    margin-left: 646px;
+    justify-self: start;
+    width: 94px; /* чуть меньше основного */
+    height: 94px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;
+}
+
+.logo-eclipse-smallest{
+    position: absolute;
+    margin-top: 660px;
+    margin-left: 1302px;
+    justify-self: start;
+    width: 43px; /* чуть меньше основного */
+    height: 43px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;}
+
+.about-company{
+    padding: 150px 25px 25px;
+    display: block;
+}
+
+.about-company-container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 1440px;
+    padding-top: 65px;
+    min-width: 1440px;
+    justify-content: space-between;
+}
+
+h2 {
+    font-family: "Libertinus Sans", sans-serif;
+    font-size: 80px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+.about-company-text {
+    padding-left: 10px;
+    padding-bottom: 44px;
+}
+.about-pictures{
+    display: flex;
+    width: 1352px;
+    gap: 35px;
+    justify-content: space-between;
+}
+
+.about-picture-first{
+    width: 323px;
+    height: 367px;
+    border-radius: 15px;
+}
+.about-picture-second{
+    width: 323px;
+    height: 367px;
+    border-radius: 15px;
+}
+.about-picture-third{
+    width: 666px;
+    height: 367px;
+    border-radius: 15px;
+}
+.delicious-collections{
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    padding: 0 25px;
+    padding-bottom: 71px;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    content: "";
+    z-index: 1;
+    overflow: hidden;
+}
+.delicious-colletion{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    
+}
+.delicious-headline{
+    display: block;
+    padding-top: 144px;
+    padding-bottom: 42px;
+
+}
+.delicious-card {
+    position: relative;
+    width: 323px;
+    height: 508px;
+    border-radius: 15px;
+    overflow: hidden; /* Важно для скругления углов */
+    cursor: pointer;
+}
+
+.delicious-cards {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.delicious-cards-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(244, 74, 113, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Hover контент - изначально скрыт */
+.delicious-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(244, 74, 113, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+/* Цена посередине */
+.delicious-name-price {
+    color: white;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 200%;
+    text-align: center;
+}
+
+
+/* Кнопка заказать */
+.delicious-cards-button-hover a{
+    position: absolute;
+    bottom: 40px;
+    left: 57px;
+    width: 209px;
+    height: 65px;
+    background: linear-gradient(155deg, #F44A71, #FF86A1);;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delicious-cards-button-hover a:hover {
+    background: #F44A71;
+    transform: scale(1.05);
+   
+}
+
+/* Hover эффекты */
+.delicious-card:hover .delicious-hover-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.delicious-card:hover .delicious-cards-button {
+    opacity: 0; /* Скрываем нижнюю кнопку при hover */
+}
+
+.delicious-card:hover .delicious-cards {
+    transform: scale(1.05); /* Легкое увеличение картинки */
+}
+
+
+.logo-eclipse-collections{
+    position: absolute;
+    top: 100px;
+    left: 1000px;
+    grid-row: 1;
+    grid-column: 1;
+    width: 624px;
+    height: 624px;
+    border-radius: 360px;
+    background: linear-gradient(155deg, #FF94AD, #FF3B68, #FF2C5D);
+    box-shadow: 0 0 20px 5px #6c6b6c;
+    z-index: -1;}
+
+
+
+
+.our-secret{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+    padding-top: 72px;
+    position: relative;
+    width: 1440px;
+    height: 746px;
+    
+}
+
+.our-secret-container{
+    padding-top: 44px;
+    padding-bottom: 144px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+    height: 432px;
+    justify-items: center;
+
+}
+
+.ecological-container{
+    grid-column: 2;
+}
+
+/* Общие стили для всех контейнеров */
+.unical-recipes-container,
+.diversity-container,
+.fresh-container,
+.ecological-container,
+.dilevery-container,
+.vector-container,
+.cooperation-container
+ {
+    display: flex;
+    flex-direction: column;
+    width: 323px;
+}
+
+/* Стили для изображений */
+.unical-recipes-image,
+.diversity-image,
+.fresh-image,
+.ecological-image,
+.dilevery-image,
+.vector-image,
+.cooperation-image,
+.order-image,
+.feedback-image
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для текста */
+.unical-recipes-text,
+.diversity-text,
+.fresh-text,
+.ecological-text,
+.dilevery-text,
+.vector-text,
+.cooperation-text,
+.feedback-text,
+.order-text 
+{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.unical-recipes-text::first-line,
+.diversity-text::first-line,
+.fresh-text::first-line,
+.ecological-text::first-line,
+.dilevery-text::first-line,
+.vector-text::first-line,
+.cooperation-text::first-line,
+.feedback-text::first-line,
+.order-text::first-line {
+    font-weight: bold;
+}
+
+/* Жирная первая строка для всех текстовых блоков */
+.unical-recipes-text::first-line,
+.diversity-text::first-line,
+.fresh-text::first-line,
+.ecological-text::first-line {
+    font-weight: bold;
+}
+
+.our-secret-eclipse-small{
+    position: absolute;
+    grid-row: 1;
+    grid-column: 1;
+    top: 5%;
+    right: 10%; /* вместо left: 90% */
+    justify-self: start;
+    width: 94px; /* чуть меньше основного */
+    height: 94px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;
+}
+
+.our-secret-eclipse-large{
+    position: absolute;
+    top: 75%;
+    left: 5%; /* вместо left: 90% */
+    width: 209px; /* чуть меньше основного */
+    height: 209px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;
+}
+
+.check-photo {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 75px 25px 0 25px;
+}
+
+.photo-grid {
+    padding-top: 44px;
+    display: grid;
+    grid-template-columns: 323px 666px 323px;
+    grid-template-rows: repeat(2, 354px);
+    gap: 20px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px solid rgba(244, 74, 113, 1);
+    object-fit: cover; /* чтобы изображения не искажались */
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: 323px 666px 323px;
+    grid-template-rows: repeat(2, 354px);
+    grid-template-areas: 
+        "photo1 photo2 photo3"
+        "photo4 photo5 photo6";
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.photo:nth-child(1) { grid-area: photo1; }
+.photo:nth-child(2) { grid-area: photo2; }
+.photo:nth-child(3) { grid-area: photo3; }
+.photo:nth-child(4) { grid-area: photo4; }
+.photo:nth-child(5) { grid-area: photo5; }
+.photo:nth-child(6) { grid-area: photo6; }
+
+.for-company-events{
+    position: relative;
+    width: 1440px;
+    padding: 75px 25px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.for-company-events-container{
+padding-top: 56px;
+display: flex;
+width: 1352px;
+justify-content: space-between;
+align-items: baseline;
+}
+
+.events-eclipse-large{
+    position: absolute;
+    top: 10%;
+    right: 7%; /* вместо left: 90% */
+    width: 94px; /* чуть меньше основного */
+    height: 94px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: -1;
+}
+
+.order-and-delivery{
+    width: 1440px;
+    position: relative;
+    height: 504px;
+    margin-top: 61px;
+    
+}
+.order-and-delivery-container{
+    width: 895px;
+    padding: 52px 25px;
+    display: grid;
+    grid-template-columns: 209px 248px 209px 225px;
+}
+
+
+.order-form-container{
+    display: flex;
+    position: absolute;
+    left: 68%;
+    top: 0%;
+    width: 437px;
+    height: 504px;
+    display: flex;
+    position: absolute;
+    left: 68%;
+    top: 0%;
+    width: 437px;
+    height: 504px;
+    border: 2px solid rgba(244, 74, 113, 1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #f0f0f0;
+    z-index: 1;
+}
+
+.order-form-text {
+    padding-top: 45px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-title {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+.description {
+    font-size: 16px;
+    width: 323px;
+}
+
+.text-area-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+.input-group {
+    width: 371px;
+}
+
+.input-with-label {
+    border: 2px solid rgba(167, 167, 167, 1);
+    border-radius: 15px;
+    padding: 10px 20px;
+    background: white;
+    position: relative;
+}
+.custom-input::placeholder,
+.custom-input::placeholder {
+    color: rgba(167, 167, 167, 1);
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.field-title {
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(167, 167, 167, 1);
+    margin-bottom: 5px;
+    line-height: 120%;
+}
+
+.custom-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #000000;
+    background: transparent;
+    padding: 0;
+}
+
+
+.submit-btn {
+    width: 371px;
+    height: 65px;
+}
+
+.submit-btn:hover {
+    background: #F44A71;
+    transform: scale(1.05);
+}
+
+
+.order-and-delivery-eclipse-large{
+    position: absolute;
+    top: -5.5%;
+    left: 18.5%; /* вместо left: 90% */
+    width: 94px; /* чуть меньше основного */
+    height: 94px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: -2;
+}
+
+.order-eclipse {
+    position: absolute;
+    justify-self: start;
+    right: 23%;
+    top: 70%;
+    width: 311px; /* чуть меньше основного */
+    height: 311px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;
+}
+
+.footer{
+    position: relative;
+    display: block;
+    height: 465px;
+    width: 1440px;
+    background-color: #FFD3DD;
+    z-index: revert;
+    overflow: hidden;
+    border-radius: 15px;
+
+}
+.footer-container{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding-top: 95px;
+    gap: 175px;
+}
+
+ul{
+    padding: 10px;
+    margin-bottom: 10px; /* Отступ снизу каждого элемента */
+
+}
+li{
+list-style-type: none;
+padding: 10px 0; /* Внутренние отступы сверху и снизу */
+font-size: 20px;
+line-height: 150%;
+}
+
+.footer-info-container{
+    padding-left: 400px;
+    z-index: 2;
+    /* КНОПКИ1 */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    /* identical to box height, or 30px */
+    letter-spacing: -0.023em;
+    /* ТЕКСТ, КОНКИ */
+    color: #242424;;
+}
+
+.footer-icon-container{
+    display: flex;
+    gap: 30px;
+}
+ .footer-eclipse-small{
+    position: absolute;
+    justify-self: start;
+    right: 55%;
+    top: 80%;
+    width: 142px; /* чуть меньше основного */
+    height: 142px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FFB6C8, #FF5C7E, #FF4A70);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;
+}
+.footer-eclipse-smallest{
+    position: absolute;
+    justify-self: start;
+    left: 89%;
+    top:70%;
+    width: 227px; /* чуть меньше основного */
+    height: 227px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, #FF94AD, #FF3B68, #FF2C5D);
+    box-shadow: 0 0 15px 3px #6c6b6c;
+    z-index: 0;
+}
+
+.custom-input::placeholder {
+    color: rgba(167, 167, 167, 1);
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+.custom-input::placeholder {
+    color: rgba(167, 167, 167, 1);
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.input-with-label:has(.custom-input:focus) {
+    border-color: rgba(167, 167, 167, 1);
+}
+
+/* Стили для валидных полей (розовый) */
+.input-with-label.valid {
+    border-color: transparent;
+    background: rgba(255, 218, 218, 1) !important;
+    box-shadow: 0 0 0 1px #f0f0f0;
+}
+
+/* Стили для невалидных полей (серый) */
+.input-with-label.invalid {
+    border-color: rgba(167, 167, 167, 1) !important;
+    background: white !important;
+    box-shadow: none;
+}
+
+/* Стили для активной кнопки */
+.submit-btn.active {
+    background: #F44A71;
+    cursor: pointer !important;
+}
+
+.submit-btn:not(.active) {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.submit-btn:not(.active):hover {
+    background: #cccccc !important;
+    transform: none !important;
+}
+
+/* Стили для невалидных полей (серый) */
+.input-with-label.invalid {
+    border-color: rgb(167, 153, 153) !important;
+    background: #E2E2E2 !important;
+    box-shadow: none;
+}
+.input-with-label:has(.custom-input:focus),
+.input-with-label:has(.custom-input:focus) {
+    background-color: #cccccc;
+    border-color: rgba(167, 167, 167, 1);
+}
+
+.custom-input,
+.custom-input {
+    background: transparent !important;
+}
+/* Стили для disabled кнопки */
+.submit-btn:disabled {
+    background: #cccccc !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+.submit-btn:not(:disabled):hover {
+    background: #F44A71;
+    transform: scale(1.05);
+}
+
+.submit-btn:disabled:hover {
+    background: #cccccc;
+    transform: none;
+}
+
+/* Убираем ссылку внутри кнопки когда disabled */
+.submit-btn:disabled a {
+    pointer-events: none;
+    color: #666;
+}
+
